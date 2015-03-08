@@ -1,11 +1,11 @@
 cd /tmp
 
 # try to remove the repo if it already exists
-rm -rf docker-samples; true
+rm -rf helloworldnodejs; true
 
-git clone https://github.com/tsukhu/docker-samples.git
+git clone https://github.com/cnandreu/helloworldnodejs.git
 
-cd ./docker-samples/nodejs/helloworld
+cd ./helloworldnodejs/nodeapp
 
 npm install
 

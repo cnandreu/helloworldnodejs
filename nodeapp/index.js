@@ -1,10 +1,14 @@
 var express = require('express');
+var exec = require('sync-exec');
 var app = express();
 
+var host = process.env.ES_NAME ? 'es' : exec('boot2docker ip').stdout.trim();
+
+console.log('Host', host);
 
 var elasticsearch = require('elasticsearch');
 var client = new elasticsearch.Client({
-  host: 'es:9200',
+  host: host + ':9200',
   log: 'trace'
 });
 

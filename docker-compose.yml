@@ -1,0 +1,14 @@
+web:
+  image: "cnandreu/helloworldnodejs"
+  ports:
+    - "3000:3000"
+  links:
+    - es
+es:
+  image: "dockerfile/elasticsearch"
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+  volumes:
+    - /Users/cnandreu/DOCKER/es:/data
+  command: "/elasticsearch/bin/elasticsearch -Des.config=/data/elasticsearch.yml"
